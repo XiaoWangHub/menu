@@ -1,0 +1,41 @@
+
+
+--游轮更新了，免费源码
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "鲨口求生2作者QQ168777105", HidePremium = false, IntroEnabled = false, ConfigFolder = "SB2Mod"})
+
+local BoatTab = Window:MakeTab({
+
+	Name = "免费船只",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local BoatSection = BoatTab:AddSection({
+
+	Name = "船只选项"
+
+})
+
+BoatSection:AddDropdown({
+
+	Name = "选择你的免费船",
+
+	Default = "1",
+
+	Options = {"DuckyBoatBeta", "DuckyBoat", "BlueCanopyMotorboat", "BlueWoodenMotorboat", "UnicornBoat", "Jetski", "RedMarlin", "Sloop", "TugBoat", "SmallDinghyMotorboat", "JetskiDonut", "Marlin", "TubeBoat", "FishingBoat", "VikingShip", "SmallWoodenSailboat", "RedCanopyMotorboat", "Catamaran", "CombatBoat", "TourBoat", "Duckmarine", "PartyBoat", "MilitarySubmarine",  "GingerbreadSteamBoat", "Sleigh2022", "Snowmobile", "CruiseShip"},
+
+	Callback = function(Value)
+
+local ohString1 = (Value)
+
+game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(ohString1)
+
+	end    
+
+})
